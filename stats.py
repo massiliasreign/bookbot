@@ -21,7 +21,6 @@ def letter_count():
         else:
             letter_counts[letter] += 1
     
-    print(letter_counts)
     return letter_counts
 def sorted_letter_count():
     letter_counts = letter_count()

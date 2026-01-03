@@ -13,6 +13,8 @@ def letter_count():
     text = get_book_text(book_path)
     letter_counts = {}
     for letter in text:
+        if not letter.isalpha():
+            continue
         letter = letter.lower()
         if letter not in letter_counts:
             letter_counts[letter] = 1
@@ -20,3 +22,9 @@ def letter_count():
             letter_counts[letter] += 1
     
     print(letter_counts)
+    return letter_counts
+def sorted_letter_count():
+    letter_counts = letter_count()
+    # sort the dictionary from greatest to least by value
+    sorted_counts = dict(sorted(letter_counts.items(), key=lambda item: item[1], reverse=True))
+    print(sorted_counts)

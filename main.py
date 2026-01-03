@@ -1,6 +1,10 @@
-from stats import get_num_words 
+from stats import get_num_words, sorted_letter_count 
+print("============ BOOKBOT ============")
+print("Analyzing book found at books/frankenstein.txt...")
+print("----------- Word Count ----------")
 get_num_words()
-from stats import letter_count
-letter_count
-from stats import sorted_letter_count
-sorted_letter_count
+print("--------- Character Count -------")
+chars = sorted_letter_count()
+for item in chars:
+    print(f"{item['char']}: {item['num']}")
+print("============= END ===============")

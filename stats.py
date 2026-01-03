@@ -22,8 +22,19 @@ def letter_count():
             letter_counts[letter] += 1
     
     return letter_counts
+
+def sort_on(item):
+    return item["num"]
+
 def sorted_letter_count():
     letter_counts = letter_count()
-    # sort the dictionary from greatest to least by value
-    sorted_counts = dict(sorted(letter_counts.items(), key=lambda item: item[1], reverse=True))
-    print(sorted_counts)
+    sorted_list = []
+
+    for char, count in letter_counts.items():
+        sorted_list.append({
+            "char": char,
+            "num": count
+        })
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+
